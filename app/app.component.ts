@@ -4,7 +4,10 @@ import { POKEMONS } from './mock-pokemons';
 
 @Component({
   selector: 'pokemon-app',
-  template: `<h1>Pokemons Shop</h1>`
+  template: `<h1>Pokemons Shop</h1>
+  <ul>
+  <li *ngFor="let pokemon of pokemons">{{ pokemon.name }}</li>
+  </ul>`
 })
 export class AppComponent implements OnInit {
 
