@@ -4,10 +4,24 @@ import { POKEMONS } from './mock-pokemons';
 
 @Component({
   selector: 'pokemon-app',
-  template: `<h1>Pokemons Shop</h1>
-  <ul>
-  <li *ngFor="let pokemon of pokemons">{{ pokemon.name }}</li>
-  </ul>`
+  template: `<h1 class="center">Pokemons</h1>
+  <div class='container'>
+  <div class="row">
+  <div *ngFor="let pokemon of pokemons" class="col s6 m4">
+    <div class="card horizontal" (click)="selectPokemon(pokemon)">
+      <div class="card-image">
+        <img [src]="pokemon.picture">
+      </div>
+      <div class="card-stacked">
+        <div class="card-content">
+          <p>{{pokemon.name}}</p>
+          <p><small>{{pokemon.created}}</small></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  </div>`
 })
 export class AppComponent implements OnInit {
 
