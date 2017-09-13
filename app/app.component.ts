@@ -16,7 +16,7 @@ import { POKEMONS } from './mock-pokemons';
       <div class="card-stacked">
         <div class="card-content">
           <p>{{pokemon.name}}</p>
-          <p><small>{{pokemon.created}}</small></p>
+          <p><small>{{pokemon.created | date:"dd/MM/yyyy"}}</small></p>
         </div>
       </div>
     </div>
