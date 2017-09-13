@@ -17,6 +17,7 @@ import { POKEMONS } from './mock-pokemons';
         <div class="card-content">
           <p>{{pokemon.name}}</p>
           <p><small>{{pokemon.created | date:"dd/MM/yyyy"}}</small></p>
+        <span *ngFor='let type of pokemon.types' class="{{ type | pokemonTypeColor }}">{{ type }}</span>
         </div>
       </div>
     </div>
