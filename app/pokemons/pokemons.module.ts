@@ -6,6 +6,7 @@ import { ListPokemonComponent }   from './list-pokemon.component';
 import { DetailPokemonComponent } from './detail-pokemon.component';
 import { ShadowCardDirective }    from './shadow-card.directive';
 import { PokemonTypeColorPipe }   from './pokemon-type-color.pipe';
+import { PokemonsService } from './pokemons.service';
 
 @NgModule({
   imports: [
@@ -18,6 +19,6 @@ import { PokemonTypeColorPipe }   from './pokemon-type-color.pipe';
     ShadowCardDirective,
     PokemonTypeColorPipe
   ],
-  providers: []
+  providers: [PokemonsService]
 })
 export class PokemonsModule { }
