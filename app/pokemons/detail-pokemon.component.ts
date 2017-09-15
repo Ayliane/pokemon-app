@@ -43,7 +43,8 @@ import { PokemonsService } from './pokemons.service';
             </table>
           </div>
           <div class="card-action">
-            <a href="#" (click)="goBack()">Retour</a>
+            <a (click)="goBack()">Retour</a>
+            <a (click)="goEdit(pokemon)">Editer</a>
           </div>
         </div>
       </div>
@@ -71,6 +72,11 @@ export class DetailPokemonComponent implements OnInit {
 
   goBack(): void {
     this.router.navigate(['/pokemons']);
+  }
+
+  goEdit(pokemon: Pokemon): void {
+    let link = ['/pokemon/edit', pokemon.id];
+    this.router.navigate(link);
   }
 
 }

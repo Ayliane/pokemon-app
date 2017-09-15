@@ -8,14 +8,21 @@ import { ShadowCardDirective }    from './shadow-card.directive';
 import { PokemonTypeColorPipe }   from './pokemon-type-color.pipe';
 import { PokemonsService } from './pokemons.service';
 
+import { FormsModule } from '@angular/forms';
+import { EditPokemonComponent } from './edit-pokemon.component';
+import { PokemonFormComponent } from './pokemon-form.component';
+
 @NgModule({
   imports: [
     CommonModule,
+    FormsModule,
     PokemonRoutingModule
   ],
   declarations: [
     ListPokemonComponent,
     DetailPokemonComponent,
+    EditPokemonComponent,
+    PokemonFormComponent,
     ShadowCardDirective,
     PokemonTypeColorPipe
   ],
