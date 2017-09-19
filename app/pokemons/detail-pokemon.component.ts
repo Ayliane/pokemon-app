@@ -60,23 +60,22 @@ export class DetailPokemonComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private router: Router;
-    private pokemonsService: PokemonsService) { }
+    private router: Router,
+    private pokemonsService: PokemonsService) {}
 
   ngOnInit(): void {
     this.route.params.forEach((params: Params) => {
       let id = +params['id'];
-      this.pokemon = this.pokemonsService.getPokemon(id);
+      this.pokemonsService.getPokemon(id).then(pokemon => this.pokemon = pokemon);
     });
   }
 
-  goBack(): void {
-    this.router.navigate(['/pokemons']);
-  }
+    goBack(): void {
+      this.router.navigate(['/pokemons']);
+    }
 
-  goEdit(pokemon: Pokemon): void {
-    let link = ['/pokemon/edit', pokemon.id];
-    this.router.navigate(link);
-  }
-
+    goEdit(pokemon: Pokemon): void {
+      let link = ['/pokemon/edit', pokemon.id];
+      this.router.navigate(link);
+    }
 }

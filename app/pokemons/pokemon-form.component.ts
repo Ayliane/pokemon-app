@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Router } from "@angular/router";
+import { Router } from '@angular/router';
 import { PokemonsService } from './pokemons.service';
 import { Pokemon } from './pokemon';
 
@@ -46,9 +46,11 @@ export class PokemonFormComponent implements OnInit {
    }
 
     onSubmit(): void {
-      console.log("Submit form !");
-      let link = ['/pokemon', this.pokemon.id];
-      this.router.navigate(link);
+      this.pokemonsService.update(this.pokemon)
+          .then(() => {
+            let link = ['/pokemon', this.pokemon.id];
+            this.router.navigate(link);
+          });
     }
   }
 
