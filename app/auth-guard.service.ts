@@ -5,7 +5,7 @@ import { CanActivate } from '@angular/router';
 export class AuthGuard implements CanActivate {
 
   canActivate() {
-    alert('Le guard a bien été appelé !');
+    console.log('Le guard a bien été appelé !');
     return true;
   }
 }
