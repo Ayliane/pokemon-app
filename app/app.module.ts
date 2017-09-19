@@ -11,16 +11,21 @@ import './rxjs-extensions';
 import { PokemonsModule } from './pokemons/pokemons.module';
 import { PageNotFoundComponent } from './page-not-found.component';
 
+import { LoginComponent } from './login.component';
+import { LoginRoutingModule } from './login-routing.module';
+
 @NgModule({
   imports:       [
     BrowserModule,
     PokemonsModule,
+    LoginRoutingModule,
     HttpModule,
     InMemoryWebApiModule.forRoot(InMemoryDataService),
     AppRoutingModule
   ],
   declarations:  [
     AppComponent,
+    LoginComponent,
     PageNotFoundComponent
   ],
   bootstrap:     [ AppComponent ],
